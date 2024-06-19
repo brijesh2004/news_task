@@ -1,0 +1,168 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.form button{
+  width: 320px;
+    height: 40px;
+    background-color: green !important;
+    border: 1px solid green;
+    color: black;
+    
+}
+h1,h6,p,h4{
+  color:#00ff00;
+}
+html,body{
+  background-color:#fff;
+}
+.login{
+  align-items:center;
+  text-align:center;
+  background-color:#fff;
+}
+.home{
+  align-items:center;
+  text-align:center;
+  background-color:#fff;
+}
+/* .card{
+  background-color:#111 !important;
+  margin-bottom:20px;
+  border: 1px solid green;
+
+} */
+.news-app {
+  display:flex;
+  justify-content: center; 
+}
+
+.news-item {
+  width: 400px;
+  padding: 10px;
+  border: 1px solid;
+  margin-bottom: 10px;
+  background-color:#00ff00;
+}
+.news-item p, a{
+  color:#000;
+  text-decoration:none;
+}
+.cheader{
+  color:#1f2833 !important;
+}
+
+.news-img {
+  width: 90%;
+  height:100px !important;
+}
+.card{
+  margin-bottom:20px;
+  margin-left:15px;
+  margin-right:15px;
+  margin-top:10px;
+  /* background-color:#66fcf1 !important; */
+  /* box-shadow: 5px 4px 20px 0 rgba(0, 0, 0, 0.2), 5px 6px 20px 0 rgba(0, 0, 0, 0.19) !important; */
+}
+/* .card:hover{
+  
+} */
+.card-light{
+  box-shadow: 5px 4px 20px 0 rgba(0, 0, 0, 0.2), 5px 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+.card-light:hover{
+  box-shadow: 0px 0px 5px 5px  rgb(77, 82, 86) !important;
+
+}
+.card-dark{
+  box-shadow: 0 29px 52px rgba(0,0,0,0.40), 0 25px 16px rgba(0,0,0,0.20) !important;
+}
+.card-dark:hover{
+  box-shadow: 0px 0px 5px 5px  rgb(245, 248, 248) !important;
+
+}
+.card-text{
+  margin-top:10px;
+  color:black !important;
+}
+.cheader.card-header {
+  color: #fff !important;
+  background-color: #111 !important;
+}
+.card-footer.card-footer {
+  background-color: aqua !important;
+  color:#111 !important;
+}
+.signup{
+  align-items:center;
+  text-align:center;
+  background-color:#fff;
+}
+.form .btn{
+  background-color: brown;
+}
+.card-header, .card-footer{
+  background-color:#aaa !important;
+  color:#fff !important;
+}
+/* .signup{
+  border: 1px solid green;
+} */
+
+.form input{
+  width:300px;
+    height:40px;
+    display:block;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+    border: 1px solid green;
+    align-items: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.background-dark{
+  background-color: #222 !important;
+}
+.background-light{
+  background-color: #fff !important;
+}
+.shadow-dark{
+  box-shadow: 0 0 5px 5px #a9a9a9 !important;
+}
+
