@@ -8,26 +8,22 @@ interface Props {
 
 // Define types
 interface Article {
-  // Define the properties of an article
-  // Adjust these according to the actual structure of the data
-  // For example, if you're using TypeScript with Axios, AxiosResponse<Article[]> might be more appropriate
-  // This is just an example based on the existing code
-  // You can adjust the types based on the actual data structure
   title: string;
   description: string;
   url: string;
-  // Add more properties as needed
-}
-interface NewsApiResponse {
-  articles: Article[];
-  // Add more properties as needed
+  urlToImage?: string;
+  publishedAt?: string;
+  author?: string;
 }
 
+interface NewsApiResponse {
+  articles: Article[];
+}
 
 interface NewsContextType {
   data: Article[];
   fetchData: (category: string) => void;
-  error:String;
+  error: string;
 }
 
 // Create a context for managing news data
@@ -45,30 +41,41 @@ const useNews = () => {
 // Create a NewsProvider component to wrap your app with the NewsContext
 const NewsProvider: React.FC<Props> = ({ children }) => {
   const [data, setData] = useState<Article[]>([]);
-  const [error,setError] = useState<String>("");
+  const [error, setError] = useState<string>("");
 
   const fetchData = (category: string) => {
-    let url = `https://newsapi.org/v2/top-headlines?q=${category}&apiKey=${import.meta.env.VITE_APP_API_KEY}`;
-    if (category === 'General') {
-      url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${import.meta.env.VITE_APP_API_KEY}`;
+    if (category === 'Saved') {
+      console.log("saved");
+      const localData = localStorage.getItem('savedItems');
+      console.log(localData);
+      if (localData) {
+        setData(JSON.parse(localData));
+      } else {
+        setData([]);
+      }
+    } else {
+      let url = `https://newsapi.org/v2/top-headlines?q=${category}&apiKey=${import.meta.env.VITE_APP_API_KEY}`;
+      if (category === 'General') {
+        url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${import.meta.env.VITE_APP_API_KEY}`;
+      }
+      axios
+        .get<NewsApiResponse>(url)
+        .then((res) => setData(res.data.articles))
+        .catch((error) => {
+          console.log(error);
+          setError(error.message);
+        });
     }
-    axios
-      .get<NewsApiResponse>(url)
-      .then((res) => setData(res.data.articles))
-      .catch((error) => {
-        console.log(error);
-        setError(error.message)
-      });
   };
 
   useEffect(() => {
-    // Fetch data for the "general" category when the component mounts
+    // Fetch data for the "General" category when the component mounts
     fetchData('General');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <NewsContext.Provider value={{ data, fetchData,error }}>
+    <NewsContext.Provider value={{ data, fetchData, error }}>
       {children}
     </NewsContext.Provider>
   );

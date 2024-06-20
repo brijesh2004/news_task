@@ -15,7 +15,7 @@ const Header:React.FC = () => {
 // }
 const handleGitHubClick = () => {
   // Navigate to GitHub
-  window.open('https://github.com/brijesh2004', '_blank');
+  window.open('https://github.com/brijesh2004/news_task', '_blank');
 };
 
   return (
@@ -34,7 +34,7 @@ const handleGitHubClick = () => {
             color: "#00ff0d",
           }}
         >
-          QuickNewz
+          Fatafat News
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse className="justify-content-end">

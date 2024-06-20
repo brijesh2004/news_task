@@ -33,7 +33,6 @@ const Home: React.FC = () => {
                 urlToImage={article.urlToImage}
                 publishedAt={article.publishedAt}
                 author={article.author}
-                source={article.source.name} // Typo corrected from 'source={article.source.name}z' to 'source={article.source.name}'
               />
             </div>
           );
